@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: web-demo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 8866
+
+mariaccc:
+  websocket:
+    port: 1234
+    path: /ws
+    name: netty-websocket-demo

@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.center}
+        namespace: ${nacos.namespace}
+      config:
+        server-addr: ${nacos.center}
+        namespace: ${nacos.namespace}
+        file-extension: yaml

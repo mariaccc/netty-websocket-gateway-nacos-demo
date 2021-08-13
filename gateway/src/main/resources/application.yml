@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: web-demo
+          uri: lb://web-demo
+          predicates:
+            - Path=/api/web-demo/**
+          filters:
+            - StripPrefix=2
+
+        - id: netty-websocket-demo
+          uri: lb:ws://netty-websocket-demo
+          predicates:
+            - Path=/websocket/**
+          filters:
+            - StripPrefix=1
+
+server:
+  port: 8888
